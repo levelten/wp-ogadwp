@@ -4,7 +4,7 @@
  * Plugin URI: https://deconf.com
  * Description: Displays Google Analytics Reports and Real-Time Statistics in your Dashboard. Automatically inserts the tracking code in every page of your website.
  * Author: Alin Marcu
- * Version: 5.3.2
+ * Version: 5.3.3
  * Author URI: https://deconf.com
  * Text Domain: open-google-analytics-dashboard-for-wp
  * Domain Path: /languages

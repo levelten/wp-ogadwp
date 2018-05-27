@@ -1202,7 +1202,7 @@ final class OGADWP_Settings {
 
 	public static function general_settings() {
 		$ogadwp = OGADWP();
-Intel_Df::watchdog('OGADWP_Settings::general_settings()', '');
+//Intel_Df::watchdog('OGADWP_Settings::general_settings()', '');
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
@@ -1221,7 +1221,7 @@ Intel_Df::watchdog('OGADWP_Settings::general_settings()', '');
 					update_option( 'ogadwp_redeemed_code', $ogadwp_access_code );
 					OGADWP_Tools::delete_cache( 'gapi_errors' );
 					OGADWP_Tools::delete_cache( 'last_error' );
-Intel_Df::watchdog('OGADWP_Settings::general_settings $_POST', print_r($_POST, 1));
+//Intel_Df::watchdog('OGADWP_Settings::general_settings $_POST', print_r($_POST, 1));
 					$ogadwp->gapi_controller->client->authenticate( $_POST['ogadwp_access_code'] );
 					$ogadwp->config->options['token'] = $ogadwp->gapi_controller->client->getAccessToken();
 					$ogadwp->config->options['automatic_updates_minorversion'] = 1;
