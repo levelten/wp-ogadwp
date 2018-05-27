@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 // Plugin Version
 if ( ! defined( 'OGADWP_CURRENT_VERSION' ) ) {
-	define( 'OGADWP_CURRENT_VERSION', '5.3.2' );
+	define( 'OGADWP_CURRENT_VERSION', '5.3.3' );
 }
 
 if ( ! defined( 'OGADWP_ENDPOINT_URL' ) ) {

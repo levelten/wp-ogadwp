@@ -75,7 +75,8 @@ class Deconf_IO_Curl extends Deconf_IO_Abstract
       curl_setopt($curl, CURLOPT_HTTPHEADER, $curlHeaders);
     }
     curl_setopt($curl, CURLOPT_URL, $request->getUrl());
-
+Intel_Df::watchdog('Deconf_IO_Curl::executeRequest request', print_r($request, 1));
+error_log('hi');
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $request->getRequestMethod());
     curl_setopt($curl, CURLOPT_USERAGENT, $request->getUserAgent());
 

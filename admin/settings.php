@@ -1202,10 +1202,12 @@ final class OGADWP_Settings {
 
 	public static function general_settings() {
 		$ogadwp = OGADWP();
+Intel_Df::watchdog('OGADWP_Settings::general_settings()', '');
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
+
 		$options = self::update_options( 'general' );
 		printf( '<div id="gapi-warning" class="updated"><p>%1$s <a href="https://deconf.com/open-google-analytics-dashboard-wordpress/?utm_source=ogadwp_config&utm_medium=link&utm_content=general_screen&utm_campaign=ogadwp">%2$s</a></p></div>', __( 'Loading the required libraries. If this results in a blank screen or a fatal error, try this solution:', 'open-google-analytics-dashboard-for-wp' ), __( 'Library conflicts between WordPress plugins', 'open-google-analytics-dashboard-for-wp' ) );
 		if ( null === $ogadwp->gapi_controller ) {
@@ -1219,6 +1221,7 @@ final class OGADWP_Settings {
 					update_option( 'ogadwp_redeemed_code', $ogadwp_access_code );
 					OGADWP_Tools::delete_cache( 'gapi_errors' );
 					OGADWP_Tools::delete_cache( 'last_error' );
+Intel_Df::watchdog('OGADWP_Settings::general_settings $_POST', print_r($_POST, 1));
 					$ogadwp->gapi_controller->client->authenticate( $_POST['ogadwp_access_code'] );
 					$ogadwp->config->options['token'] = $ogadwp->gapi_controller->client->getAccessToken();
 					$ogadwp->config->options['automatic_updates_minorversion'] = 1;

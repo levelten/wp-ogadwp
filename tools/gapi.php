@@ -27,6 +27,9 @@ if ( ! class_exists( 'OGADWP_GAPI_Controller' ) ) {
 
 		private $access = array( '65556128672.apps.googleusercontent.com', 'Kc7888wgbc_JbeCmApbFjnYpwE' );
 
+		// New Google API project
+		//private $access = array( '1079072868508-5umluufervrpe0346pe3hibqtq5jutv8.apps.googleusercontent.com', 'fK30fQQN1SPCvE_8dvud5dfO' );
+
 		public function __construct() {
 			$this->ogadwp = OGADWP();
 
