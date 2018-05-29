@@ -25,13 +25,7 @@ if ( ! class_exists( 'OGADWP_GAPI_Controller' ) ) {
 
 		private $ogadwp;
 
-		// original access altered with OGADWP_GAPI::map
-		//private $access = array( '65556128672.apps.googleusercontent.com', 'Kc7888wgbc_JbeCmApbFjnYpwE' );
-		//private $access = array( '65556128781.apps.googleusercontent.com', 'Kc7888wgbc_JbeCpbFjnYpwE' );
-
-		// New Google API project
 		private $access = array( '1079072868399-5umluufervrpe0346pe3hibqtq5jutv8.apps.googleusercontent.com', 'fK30fQQN1SmAPCvE_8dvud5dfO' );
-		//private $access = array( '1079072868508-5umluufervrpe0346pe3hibqtq5jutv8.apps.googleusercontent.com', 'fK30fQQN1SPCvE_8dvud5dfO' );
 
 		public function __construct() {
 			$this->ogadwp = OGADWP();
@@ -903,20 +897,16 @@ if ( ! class_exists( 'OGADWP_GAPI_Controller' ) ) {
 		}
 
 		private function map( $map ) {
-//Intel_Df::watchdog('OGADWP_GAPI_Controller::map()', print_r($map, 1));
-			// original code
 			$map = explode( '.', $map );
 			if ( isset( $map[1] ) ) {
 				$a = explode('-', $map[0]);
 				$a[0] += ord( 'map' );
 				$map[0] = implode('-', $a);
 				$ret = implode( '.', $map );
-//Intel_Df::watchdog('OGADWP_GAPI_Controller::map() ret', print_r($ret, 1));
 				return $ret;
 			} else {
 				$a = substr($map[0], 0, 1) == 'f' ? 80 : 112;
 				$ret = str_ireplace( 'map', chr( $a ), $map[0] );
-//Intel_Df::watchdog('OGADWP_GAPI_Controller::map() ret', print_r($ret, 1));
 				return $ret;
 			}
 		}
